@@ -7,7 +7,7 @@ describe "Lsyncd" do
     it { should be_enabled }
   end
 
-  describe file('/etc/lsyncd.conf') do
+  describe file('/etc/lsyncd/lsyncd.conf.lua') do
     it { should be_file }
     it { should contain '"/var/www"' }
     it { should contain '"/opt/test"' }

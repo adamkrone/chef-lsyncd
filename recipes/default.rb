@@ -17,13 +17,12 @@ node['lsyncd']['watched_dirs'].each do |dir|
   end
 end
 
-template '/etc/lsyncd.conf' do
-  source 'lsyncd.conf.erb'
+directory '/etc/lsyncd' do
   action :create
 end
 
-template '/etc/init.d/lsyncd' do
-  source 'lsyncd.init.erb'
+template '/etc/lsyncd/lsyncd.conf.lua' do
+  source 'lsyncd.conf.lua.erb'
   action :create
 end
 
