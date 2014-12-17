@@ -2,7 +2,7 @@ require 'serverspec'
 
 set :backend, :exec
 
-describe "Lsyncd" do
+describe 'Lsyncd' do
   describe service('lsyncd') do
     it { should be_enabled }
   end
