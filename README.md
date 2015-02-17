@@ -1,12 +1,12 @@
 # Lsyncd Cookbook
 
-[![Latest Version](http://img.shields.io/github/release/adamkrone/chef-lsyncd.svg?style=flat-square)][release]
-[![Build Status](http://img.shields.io/travis/adamkrone/chef-lsyncd.svg?style=flat-square)][build]
-[![Coverage Status](http://img.shields.io/coveralls/adamkrone/chef-lsyncd.svg?style=flat-square)][coverage]
+[![Latest Version](http://img.shields.io/github/release/thirdwavellc/chef-lsyncd.svg?style=flat-square)][release]
+[![Build Status](http://img.shields.io/travis/thirdwavellc/chef-lsyncd.svg?style=flat-square)][build]
+[![Coverage Status](http://img.shields.io/coveralls/thirdwavellc/chef-lsyncd.svg?style=flat-square)][coverage]
 
-[release]: https://github.com/adamkrone/chef-lsyncd/releases
-[build]: https://travis-ci.org/adamkrone/chef-lsyncd
-[coverage]: https://coveralls.io/r/adamkrone/chef-lsyncd
+[release]: https://github.com/thirdwavellc/chef-lsyncd/releases
+[build]: https://travis-ci.org/thirdwavellc/chef-lsyncd
+[coverage]: https://coveralls.io/r/thirdwavellc/chef-lsyncd
 
 Installs and configures lsyncd. Currently in an early prototype stage, and
 focuses on notifying csync2 for replication.
