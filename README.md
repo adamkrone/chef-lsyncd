@@ -11,23 +11,35 @@
 Installs and configures lsyncd. Currently in an early prototype stage, and
 focuses on notifying csync2 for replication.
 
-## Supported Platforms
+##LWRPs
 
-_More thorough platform testing will be completed once this cookbook takes shape._
+This cookbook is intended to be consumed through its LWRP, and therefore
+doesn't include any recipes. Here is an overview of the LWRP provided.
 
-- Ubuntu 14.04
+###lsyncd_config
 
-## Attributes
+**Attributes:**
 
-- `node['lsyncd']['owner']` - Owner of lsyncd service and its config
-- `node['lsyncd']['group']` - Group owning lsyncd service and its config
-- `node['lsyncd']['watched_dirs']` - Directories to watch
+| Name         | Description                                   | Type   | Required | Default               |
+| ------------ | --------------------------------------------- | ------ | -------- | --------------------- |
+| config_file  | Location of generated lsyncd config file      | String | true     | N/A                   |
+| cookbook     | Cookbook that contains lsyncd config template | String | false    | 'lsyncd'              |
+| template     | Template for the lsyncd config                | String | false    | 'lsyncd.conf.lua.erb' |
+| owner        | Owner of watched directories                  | String | false    | 'deploy'              |
+| group        | Group of watched directories                  | String | false    | 'deploy'              |
+| watched_dirs | Directories to watch for changes              | Array  | false    | []                    |
 
-## Recipes
+Instead of specifying all watched_dirs together as an array, you can use
+`watched_dir` to add each directory individually.
 
-### default
+**Example:**
 
-Installs and configures lsyncd.
+```ruby
+lsyncd_config '/etc/lsyncd/lsyncd.conf.lua' do
+  watched_dir({ source: '/var/www/site1/shared' })
+  watched_dir({ source: '/var/www/site2/shared' })
+end
+```
 
 ## Contributing
 

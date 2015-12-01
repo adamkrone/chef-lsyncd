@@ -1,6 +1,7 @@
 require 'chefspec'
 require 'chefspec/berkshelf'
 require 'coveralls'
+require 'pry'
 
 Coveralls.wear!
 
