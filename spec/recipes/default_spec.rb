@@ -16,11 +16,13 @@ require 'spec_helper'
     end
 
     it 'should create /var/www/example1 directory' do
-      expect(chef_run).to create_directory('/var/www/example1').with(owner: 'vagrant', group: 'vagrant')
+      expect(chef_run).to create_directory('/var/www/example1')
+        .with(owner: 'vagrant', group: 'vagrant')
     end
 
     it 'should create /var/www/example2 directory' do
-      expect(chef_run).to create_directory('/var/www/example2').with(owner: 'vagrant', group: 'vagrant')
+      expect(chef_run).to create_directory('/var/www/example2')
+        .with(owner: 'vagrant', group: 'vagrant')
     end
 
     it 'should create /var/www/test directory' do

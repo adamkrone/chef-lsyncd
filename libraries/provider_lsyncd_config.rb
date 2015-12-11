@@ -35,9 +35,12 @@ class Chef
 
         # Make sure watched directories exist
         new_resource.watched_dirs.each do |dir|
+          dir_owner = (dir[:owner] || new_resource.owner)
+          dir_group = (dir[:group] || new_resource.group)
+
           directory dir[:source] do
-            owner (dir[:owner] || new_resource.owner)
-            group (dir[:group] || new_resource.group)
+            owner dir_owner
+            group dir_group
             recursive true
             action :create
           end
