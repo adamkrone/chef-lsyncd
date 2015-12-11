@@ -71,6 +71,6 @@ initSync = {
                 f:close()
         end
 }
-<% node['lsyncd']['watched_dirs'].each do |source| %>
-        sync {initSync, source="<%= source %>", syncid="<%= node['hostname'] %>"}
+<% @watched_dirs.each do |dir| %>
+        sync {initSync, source="<%= dir[:source] %>", syncid="<%= dir[:syncid] %>"}
 <% end %>

@@ -8,14 +8,10 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
   - name: ubuntu-12.04
+  - name: debian-7.9
 
 suites:
   - name: default
     run_list:
       - recipe[apt::default]
-      - recipe[lsyncd::default]
-    attributes:
-      lsyncd:
-        watched_dirs:
-          - '/var/www'
-          - '/opt/test'
+      - recipe[chef-lsyncd-test::separate_dirs]
