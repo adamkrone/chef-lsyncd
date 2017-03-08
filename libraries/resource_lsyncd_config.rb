@@ -35,9 +35,6 @@ class Chef
       attribute :watched_dirs, kind_of: Array, default: []
 
       def watched_dir(dir)
-        watched_dir = dir.to_h
-        watched_dir[:syncid] ||= node['hostname']
-
         watched_dirs << watched_dir
       end
     end

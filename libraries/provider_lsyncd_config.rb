@@ -38,7 +38,7 @@ class Chef
           dir_owner = (dir[:owner] || new_resource.owner)
           dir_group = (dir[:group] || new_resource.group)
 
-          directory dir[:source] do
+          directory dir[:path] do
             owner dir_owner
             group dir_group
             recursive true

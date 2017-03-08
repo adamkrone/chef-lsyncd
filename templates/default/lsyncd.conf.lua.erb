@@ -71,6 +71,6 @@ initSync = {
                 f:close()
         end
 }
-<% @watched_dirs.each do |dir| %>
-        sync {initSync, source="<%= dir[:source] %>", syncid="<%= dir[:syncid] %>"}
+<% @watched_dirs.each_with_index do |dir,i| %>
+        sync {initSync, source="<%= dir[:path] %>", syncid="<%= dir[:name] %>", syncnum="<%= i %>"}
 <% end %>
